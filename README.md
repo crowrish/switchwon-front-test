@@ -2,6 +2,10 @@
 
 환전 서비스 웹 애플리케이션
 
+## 스크린샷
+![444445](https://github.com/user-attachments/assets/a1d93027-7123-4d87-80c9-10d8b3a6b867)
+
+
 ## 기술 스택
 
 - **Framework**: Next.js v16 (App Router), React v19
