@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 스위치원 프론트엔드
 
-## Getting Started
+환전 서비스 웹 애플리케이션
 
-First, run the development server:
+## 기술 스택
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework**: Next.js v16 (App Router), React v19
+- **Styling**: Tailwind CSS v3
+- **State Management**: Zustand
+- **Data Fetching**: TanStack Query (React Query) v5
+- **HTTP Client**: Axios
+- **Testing**: Jest, React Testing Library
+- **Code Quality**: ESLint, Prettier
+
+## Path Alias
+
+`@/*`
+
+## 구현 요구사항
+
+### 페이지 구성
+
+1. **로그인 페이지** (`/`)
+2. **환율 조회 페이지** (`/exchange-rate`)
+3. **환전 내역 페이지** (`/exchange-history`)
+
+### API Fetch
+
+- React Query (useQuery/useMutation)
+- Server Action (Next.js)
+- Axios (Server Side)
+
+### JWT 인증
+
+- Cookie에 JWT 저장
+- Axios에서 Cookie의 토큰을 읽어 API헤더 포함
+
+### 라우트 보호
+
+Next.js Middleware(Proxy) 사용
+
+- 쿠키에 `authToken`이 없으면 `/`로 리다이렉트
+
+### API CORS
+
+Next.js Server Action 사용
+
+## 환경 변수
+
+```env
+NEXT_PUBLIC_API_BASE_URL=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 실행 방법
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Created by Byungwook Lee

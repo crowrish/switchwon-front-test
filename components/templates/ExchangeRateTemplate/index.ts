@@ -1,0 +1,1 @@
+export { ExchangeRateTemplate } from './ExchangeRateTemplate';
